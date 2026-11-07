@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, html, body {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Smooth Premium UI Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pop-in {
+  animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 2s infinite ease-in-out;
+}
+
+/* 60FPS Hardware-Accelerated Smooth Flying Food Animations */
+@keyframes flyToCart {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translate3d(calc(var(--target-x) * 0.15), -40px, 0) scale(1.12);
+    opacity: 1;
+  }
+  65% {
+    transform: translate3d(calc(var(--target-x) * 0.72), calc(var(--target-y) * 0.65), 0) scale(0.75);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(var(--target-x), var(--target-y), 0) scale(0.18);
+    opacity: 0;
+  }
+}
+
+/* Flying Food Out of Cart (When Minus -) */
+@keyframes flyFromCart {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.25);
+    opacity: 0.9;
+  }
+  20% {
+    transform: translate3d(calc(var(--target-x) * 0.15), -30px, 0) scale(1.1);
+    opacity: 1;
+  }
+  65% {
+    transform: translate3d(calc(var(--target-x) * 0.7), calc(var(--target-y) * 0.65), 0) scale(0.8);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(var(--target-x), var(--target-y), 0) scale(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes cartBump {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2) rotate(-8deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(8deg);
+  }
+  75% {
+    transform: scale(1.08) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-cart-bump {
+  animation: cartBump 0.5s ease-in-out;
+}
